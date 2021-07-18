@@ -1,4 +1,4 @@
-" Initialisation:"{{{
+" Initialization:"{{{
 " ----------------------------------------------------------------------------
 hi clear
 if exists("syntax_on")
@@ -6,7 +6,7 @@ if exists("syntax_on")
 endif
 
 let s:style = get(g:, 'ayucolor', 'dark')
-let s:transparent = get(g:, 'ayutrans', 1)
+let s:transparent = get(g:, 'ayutrans', v:false)
 let g:colors_name = "ayu"
 "}}}
 
@@ -106,8 +106,8 @@ exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_tag         .s:bg_panel       .s:fmt_none
+exe "hi! DiffAdd"       .s:fg_added       .s:bg_panel       .s:fmt_none
+exe "hi! DiffChange"    .s:fg_modified    .s:bg_panel       .s:fmt_none
 exe "hi! DiffText"      .s:fg_fg          .s:bg_panel       .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
@@ -158,7 +158,7 @@ exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
 "   Boolean"
 "   Float"
 
-exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_entity    .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_bldi
