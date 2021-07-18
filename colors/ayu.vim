@@ -6,6 +6,7 @@ if exists("syntax_on")
 endif
 
 let s:style = get(g:, 'ayucolor', 'dark')
+let s:transparent = get(g:, 'ayutrans', 1)
 let g:colors_name = "ayu"
 "}}}
 
@@ -14,27 +15,33 @@ let g:colors_name = "ayu"
 
 let s:palette = {}
 
-let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#212733"}
+let s:palette.bg        = {'dark': "#0A0E14",  'light': "#FAFAFA",  'mirage': "#1F2430"}
 
 let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#5C6773"}
-let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
+let s:palette.markup    = {'dark': "#F07178",  'light': "#F07171",  'mirage': "#F28779"}
 let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
-let s:palette.operator  = {'dark': "#E7C547",  'light': "#E7C547",  'mirage': "#80D4FF"}
-let s:palette.tag       = {'dark': "#36A3D9",  'light': "#36A3D9",  'mirage': "#5CCFE6"}
+let s:palette.operator  = {'dark': "#F29668",  'light': "#ED9366",  'mirage': "#F29E74"}
+let s:palette.entity    = {'dark': "#59C2FF",  'light': "#399EE6",  'mirage': "#73D0FF"}
+let s:palette.tag       = {'dark': "#39BAE6",  'light': "#55B4D4",  'mirage': "#5CCFE6"}
 let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#4CBF99",  'mirage': "#95E6CB"}
-let s:palette.string    = {'dark': "#B8CC52",  'light': "#86B300",  'mirage': "#BBE67E"}
-let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD57F"}
-let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFC44C"}
-let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFAE57"}
+let s:palette.string    = {'dark': "#C2D94C",  'light': "#86B300",  'mirage': "#BAE67E"}
+let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD580"}
+let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFE6B3"}
+let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFA759"}
 
-let s:palette.error     = {'dark': "#FF3333",  'light': "#FF3333",  'mirage': "#FF3333"}
-let s:palette.accent    = {'dark': "#F29718",  'light': "#FF6A00",  'mirage': "#FFCC66"}
-let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#272D38"}
-let s:palette.guide     = {'dark': "#2D3640",  'light': "#D9D8D7",  'mirage': "#3D4751"}
-let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#242B38"}
-let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
-let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
-let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
+let s:palette.error     = {'dark': "#FF3333",  'light': "#F51818",  'mirage': "#FF3333"}
+let s:palette.accent    = {'dark': "#E6B450",  'light': "#FF9940",  'mirage': "#FFCC66"}
+let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#232834"}
+let s:palette.guide     = {'dark': "#2D3640",  'light': "#D9D8D7",  'mirage': "#323A4C"}
+let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#191E2A"}
+let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#33415E"}
+let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#CBCCC6"}
+let s:palette.fg_idle   = {'dark': "#4D5566",  'light': "#8A9199",  'mirage': "#707A8C"}
+let s:palette.added     = {'dark': "#91B362",  'light': "#99BF4D",  'mirage': "#A6CC70"}
+let s:palette.modified  = {'dark': "#6994BF",  'light': "#709ECC",  'mirage': "#77A8D9"}
+let s:palette.removed   = {'dark': "#D96C75",  'light': "#F27983",  'mirage': "#F27983"}
+let s:palette.border    = {'dark': "#F0F0F0",  'light': "#000000",  'mirage': "#101521"}
+let s:palette.shadow    = {'dark': "#00010A",  'light': "#424A50",  'mirage': "#141925"}
 
 "}}}
 
@@ -69,7 +76,7 @@ let s:i      = ",italic"
 
 exe "let s:fmt_none = ' gui=NONE".          " cterm=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_bldi = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
+exe "let s:fmt_bldi = ' gui=NONE".s:b.s:i.  " cterm=NONE".s:b.s:i.  " term=NONE".s:b.s:i."'"
 exe "let s:fmt_undr = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
 exe "let s:fmt_undb = ' gui=NONE".s:u.s:b.  " cterm=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
 exe "let s:fmt_undi = ' gui=NONE".s:u.      " cterm=NONE".s:u.      " term=NONE".s:u    ."'"
@@ -83,12 +90,19 @@ exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE"
 
 " Vim Highlighting: (see :help highlight-groups)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
+if s:transparent
+  exe "hi! Normal"        .s:fg_fg          .s:bg_none        .s:fmt_none
+  exe "hi! SignColumn"    .s:fg_none        .s:bg_none        .s:fmt_none
+  exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_none        .s:fmt_none
+else
+  exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
+  exe "hi! SignColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
+  exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
+endif
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 " Conceal, Cursor, CursorIM
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
 exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
@@ -99,7 +113,6 @@ exe "hi! ErrorMsg"      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe "hi! VertSplit"     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe "hi! Folded"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_panel       .s:fmt_none
 "   Incsearch"
 
 exe "hi! MatchParen"    .s:fg_fg          .s:bg_bg          .s:fmt_undr
@@ -136,7 +149,7 @@ hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NO
 
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
+exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_ital
 
 exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
@@ -148,7 +161,7 @@ exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
 
-exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_none
+exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_bldi
 "   Conditional"
 "   Repeat"
 "   Label"
@@ -188,8 +201,9 @@ exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
 "   qfLineNr"
 "   qfError"
 
-exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
+exe "hi! Conceal"           .s:fg_guide   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
+exe "hi! Whitespace"        .s:fg_shadow  .s:bg_none        .s:fmt_none
 
 
 " Terminal
@@ -241,10 +255,49 @@ exe "hi! NERDTreeDirSlash"          .s:fg_accent     .s:bg_none        .s:fmt_no
 
 " GitGutter
 " ---------
-exe "hi! GitGutterAdd"          .s:fg_string     .s:bg_none        .s:fmt_none
-exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
-exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterAdd"          .s:fg_added      .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChange"       .s:fg_modified   .s:bg_none        .s:fmt_none
+exe "hi! GitGutterDelete"       .s:fg_removed    .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
+
+" Treesitter
+exe "hi! TSParameter"       .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! TSNamespace"       .s:fg_string     .s:bg_none        .s:fmt_none
+
+" Coc
+exe "hi! CocErrorSign"      .s:fg_removed    .s:bg_none        .s:fmt_bold
+exe "hi! CocWarningSign"    .s:fg_removed    .s:bg_none        .s:fmt_bold
+exe "hi! CocInfoSign"       .s:fg_removed    .s:bg_none        .s:fmt_bold
+exe "hi! CocWarningSign"    .s:fg_function   .s:bg_none        .s:fmt_none
+exe "hi! CocInfoSign"       .s:fg_regexp     .s:bg_none        .s:fmt_none
+exe "hi! CocHighlightText"  .s:fg_none       .s:bg_guide       .s:fmt_none
+
+" Indent
+exe "hi! IndentBlanklineChar" .s:fg_border   .s:bg_none        .s:fmt_none
+
+" Vimspector
+exe "hi! VimspectorBP"      .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! VimspectorBPCond"  .s:fg_function   .s:bg_none        .s:fmt_none
+exe "hi! VimspectorPC"      .s:fg_constant   .s:bg_none        .s:fmt_none
+exe "hi! VimspectorPCBP"    .s:fg_constant   .s:bg_none        .s:fmt_none
+
+" Sneak
+exe "hi! Sneak"             .s:fg_bg         .s:bg_constant    .s:fmt_none
+
+" HTML & Vimwiki
+exe "hi! htmlH1"            .s:fg_constant   .s:bg_none        .s:fmt_bold
+exe "hi! htmlH2"            .s:fg_string     .s:bg_none        .s:fmt_bold
+exe "hi! htmlH3"            .s:fg_entity     .s:bg_none        .s:fmt_bold
+exe "hi! htmlH4"            .s:fg_function   .s:bg_none        .s:fmt_bold
+exe "hi! htmlH5"            .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! htmlH6"            .s:fg_regexp     .s:bg_none        .s:fmt_none
+
+hi! link VimwikiHeader1 htmlH1
+hi! link VimwikiHeader2 htmlH2
+hi! link VimwikiHeader3 htmlH3
+hi! link VimwikiHeader4 htmlH4
+hi! link VimwikiHeader5 htmlH5
+hi! link VimwikiHeader6 htmlH6
 
 "}}}
 
@@ -269,7 +322,7 @@ hi! link diffAdded String
 "   diffComment
 
 "}}}
-"
+
 " This is needed for some reason: {{{
 
 let &background = s:style
