@@ -23,8 +23,10 @@ let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#
 let s:palette.operator  = {'dark': "#F29668",  'light': "#ED9366",  'mirage': "#F29E74"}
 let s:palette.entity    = {'dark': "#59C2FF",  'light': "#399EE6",  'mirage': "#73D0FF"}
 let s:palette.tag       = {'dark': "#39BAE6",  'light': "#55B4D4",  'mirage': "#5CCFE6"}
+let s:palette.field     = {'dark': "#39BAE6",  'light': "#55B4D4",  'mirage': "#B695E0"}
 let s:palette.regexp    = {'dark': "#95E6CB",  'light': "#4CBF99",  'mirage': "#95E6CB"}
 let s:palette.string    = {'dark': "#C2D94C",  'light': "#86B300",  'mirage': "#BAE67E"}
+let s:palette.namespace = {'dark': "#C2D94C",  'light': "#86B300",  'mirage': "#9ac732"}
 let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD580"}
 let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFE6B3"}
 let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFA759"}
@@ -132,7 +134,7 @@ exe "hi! SpellBad"      .s:fg_error       .s:bg_none        .s:fmt_undr
 exe "hi! SpellRare"     .s:fg_regexp      .s:bg_none        .s:fmt_undr
 exe "hi! StatusLine"    .s:fg_fg          .s:bg_panel       .s:fmt_none
 exe "hi! StatusLineNC"  .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
-exe "hi! WildMenu"      .s:fg_bg          .s:bg_markup      .s:fmt_none
+exe "hi! WildMenu"      .s:fg_selection   .s:bg_markup      .s:fmt_none
 exe "hi! TabLine"       .s:fg_fg          .s:bg_panel       .s:fmt_revr
 "   TabLineFill"
 "   TabLineSel"
@@ -158,7 +160,7 @@ exe "hi! String"          .s:fg_string    .s:bg_none        .s:fmt_none
 "   Boolean"
 "   Float"
 
-exe "hi! Identifier"      .s:fg_entity    .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_tag       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_function  .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_keyword   .s:bg_none        .s:fmt_bldi
@@ -175,7 +177,7 @@ exe "hi! PreProc"         .s:fg_special   .s:bg_none        .s:fmt_none
 "   Macro"
 "   PreCondit"
 
-exe "hi! Type"            .s:fg_tag       .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_entity    .s:bg_none        .s:fmt_none
 "   StorageClass"
 exe "hi! Structure"       .s:fg_special   .s:bg_none        .s:fmt_none
 "   Typedef"
@@ -197,9 +199,10 @@ exe "hi! Todo"            .s:fg_markup    .s:bg_none        .s:fmt_none
 
 " Quickfix window highlighting
 exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
+exe "hi! qfError"         .s:fg_removed   .s:bg_none        .s:fmt_bold
+exe "hi! qfWarning"       .s:fg_function  .s:bg_none        .s:fmt_bold
 "   qfFileName"
 "   qfLineNr"
-"   qfError"
 
 exe "hi! Conceal"           .s:fg_guide   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
@@ -262,12 +265,12 @@ exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
 
 " Treesitter
 exe "hi! TSParameter"       .s:fg_markup     .s:bg_none        .s:fmt_none
-exe "hi! TSNamespace"       .s:fg_string     .s:bg_none        .s:fmt_none
+exe "hi! TSNamespace"       .s:fg_namespace  .s:bg_none        .s:fmt_none
+exe "hi! TSField"           .s:fg_field      .s:bg_none        .s:fmt_none
+exe "hi! TSConstructor"     .s:fg_regexp     .s:bg_none        .s:fmt_none
 
 " Coc
 exe "hi! CocErrorSign"      .s:fg_removed    .s:bg_none        .s:fmt_bold
-exe "hi! CocWarningSign"    .s:fg_removed    .s:bg_none        .s:fmt_bold
-exe "hi! CocInfoSign"       .s:fg_removed    .s:bg_none        .s:fmt_bold
 exe "hi! CocWarningSign"    .s:fg_function   .s:bg_none        .s:fmt_none
 exe "hi! CocInfoSign"       .s:fg_regexp     .s:bg_none        .s:fmt_none
 exe "hi! CocHighlightText"  .s:fg_none       .s:bg_guide       .s:fmt_none
@@ -283,6 +286,11 @@ exe "hi! VimspectorPCBP"    .s:fg_constant   .s:bg_none        .s:fmt_none
 
 " Sneak
 exe "hi! Sneak"             .s:fg_bg         .s:bg_constant    .s:fmt_none
+
+" Visual multi
+exe "hi! VMExtend"          .s:fg_selection  .s:bg_regexp      .s:fmt_none
+exe "hi! VMCursor"          .s:fg_selection  .s:bg_string      .s:fmt_none
+hi! link VMMono WildMenu
 
 " HTML & Vimwiki
 exe "hi! htmlH1"            .s:fg_constant   .s:bg_none        .s:fmt_bold
@@ -314,9 +322,9 @@ hi! link VimwikiHeader6 htmlH6
 "   diffIsA
 "   diffNoEOL
 "   diffCommon
-hi! link diffRemoved Constant
+hi! link diffRemoved GitGutterDelete
 "   diffChanged
-hi! link diffAdded String
+hi! link diffAdded GitGutterAdd
 "   diffLine
 "   diffSubname
 "   diffComment
