@@ -206,7 +206,7 @@ exe "hi! qfWarning"       .s:fg_function  .s:bg_none        .s:fmt_bold
 
 exe "hi! Conceal"           .s:fg_guide   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
-exe "hi! Whitespace"        .s:fg_shadow  .s:bg_none        .s:fmt_none
+exe "hi! Whitespace"        .s:fg_border  .s:bg_none        .s:fmt_none
 
 
 " Terminal
@@ -306,6 +306,30 @@ hi! link VimwikiHeader3 htmlH3
 hi! link VimwikiHeader4 htmlH4
 hi! link VimwikiHeader5 htmlH5
 hi! link VimwikiHeader6 htmlH6
+
+" Telescope
+exe "hi! TelescopeBorder"         .s:fg_fg_idle .s:bg_none     .s:fmt_none
+exe "hi! TelescopePreviewLine"    .s:fg_none    .s:bg_shadow   .s:fmt_none
+exe "hi! TelescopeMultiSelection" .s:fg_field   .s:bg_none     .s:fmt_bold
+
+" WhichKey
+hi! link WhichKeyValue Directory
+
+" Barbar
+exe "hi! BufferCurrent"         .s:fg_fg       .s:bg_selection .s:fmt_none
+exe "hi! BufferCurrentSign"     .s:fg_accent   .s:bg_selection .s:fmt_none
+exe "hi! BufferCurrentMod"      .s:fg_removed  .s:bg_selection .s:fmt_none
+exe "hi! BufferCurrentTarget"   .s:fg_constant .s:bg_selection .s:fmt_bldi
+exe "hi! BufferVisible"         .s:fg_fg_idle  .s:bg_panel     .s:fmt_none
+exe "hi! BufferVisibleSign"     .s:fg_special  .s:bg_panel     .s:fmt_none
+exe "hi! BufferVisibleMod"      .s:fg_removed  .s:bg_panel     .s:fmt_none
+exe "hi! BufferVisibleTarget"   .s:fg_constant .s:bg_panel     .s:fmt_bldi
+exe "hi! BufferInactive"        .s:fg_fg_idle  .s:bg_panel     .s:fmt_none
+exe "hi! BufferInactiveSign"    .s:fg_comment  .s:bg_panel     .s:fmt_none
+exe "hi! BufferInactiveMod"     .s:fg_markup   .s:bg_panel     .s:fmt_none
+exe "hi! BufferInactiveTarget"  .s:fg_constant .s:bg_panel     .s:fmt_bldi
+exe "hi! BufferTabpages"        .s:fg_regexp   .s:bg_none      .s:fmt_bold
+exe "hi! BufferTabpageFill"     .s:fg_comment  .s:bg_none      .s:fmt_none
 
 "}}}
 
