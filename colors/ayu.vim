@@ -44,6 +44,7 @@ let s:palette.modified  = {'dark': "#6994BF",  'light': "#709ECC",  'mirage': "#
 let s:palette.removed   = {'dark': "#D96C75",  'light': "#F27983",  'mirage': "#F27983"}
 let s:palette.border    = {'dark': "#F0F0F0",  'light': "#000000",  'mirage': "#101521"}
 let s:palette.shadow    = {'dark': "#00010A",  'light': "#424A50",  'mirage': "#141925"}
+let s:palette.linenr    = {'dark': "#00010A",  'light': "#424A50",  'mirage': "#42547a"}
 
 "}}}
 
@@ -105,7 +106,7 @@ exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 " Conceal, Cursor, CursorIM
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_linenr      .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe "hi! DiffAdd"       .s:fg_added       .s:bg_panel       .s:fmt_none
@@ -208,6 +209,11 @@ exe "hi! Conceal"           .s:fg_guide   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
 exe "hi! Whitespace"        .s:fg_border  .s:bg_none        .s:fmt_none
 
+exe "hi! Constructor"       .s:fg_regexp     .s:bg_none        .s:fmt_none
+exe "hi! Field"             .s:fg_field      .s:bg_none        .s:fmt_none
+exe "hi! Namespace"         .s:fg_namespace  .s:bg_none        .s:fmt_none
+exe "hi! Parameter"         .s:fg_markup     .s:bg_none        .s:fmt_none
+
 
 " Terminal
 " ---------
@@ -264,10 +270,10 @@ exe "hi! GitGutterDelete"       .s:fg_removed    .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
 
 " Treesitter
-exe "hi! TSParameter"       .s:fg_markup     .s:bg_none        .s:fmt_none
-exe "hi! TSNamespace"       .s:fg_namespace  .s:bg_none        .s:fmt_none
-exe "hi! TSField"           .s:fg_field      .s:bg_none        .s:fmt_none
-exe "hi! TSConstructor"     .s:fg_regexp     .s:bg_none        .s:fmt_none
+hi! link TSParameter Parameter
+hi! link TSConstructor Constructor
+hi! link TSNamespace Namespace
+hi! link TSField Field
 
 " Coc
 exe "hi! CocErrorSign"      .s:fg_removed    .s:bg_none        .s:fmt_bold
@@ -308,9 +314,10 @@ hi! link VimwikiHeader5 htmlH5
 hi! link VimwikiHeader6 htmlH6
 
 " Telescope
-exe "hi! TelescopeBorder"         .s:fg_fg_idle .s:bg_none     .s:fmt_none
-exe "hi! TelescopePreviewLine"    .s:fg_none    .s:bg_shadow   .s:fmt_none
-exe "hi! TelescopeMultiSelection" .s:fg_field   .s:bg_none     .s:fmt_bold
+exe "hi! TelescopeBorder"         .s:fg_fg_idle  .s:bg_none     .s:fmt_none
+exe "hi! TelescopePreviewLine"    .s:fg_none     .s:bg_border   .s:fmt_none
+exe "hi! TelescopeMultiSelection" .s:fg_field    .s:bg_none     .s:fmt_bold
+exe "hi! TelescopeMatching"       .s:fg_operator .s:bg_none     .s:fmt_bold
 
 " WhichKey
 hi! link WhichKeyValue Directory
