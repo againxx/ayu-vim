@@ -300,16 +300,16 @@ hi! link VimwikiHeader5 htmlH5
 hi! link VimwikiHeader6 htmlH6
 
 " Telescope
-exe 'hi! TelescopeBorder'         .s:fg_fg_idle  .s:bg_none     .s:fmt_none
-exe 'hi! TelescopePreviewLine'    .s:fg_none     .s:bg_border   .s:fmt_none
-exe 'hi! TelescopeMultiSelection' .s:fg_field    .s:bg_none     .s:fmt_bold
-exe 'hi! TelescopeMatching'       .s:fg_operator .s:bg_none     .s:fmt_bold
+exe 'hi! TelescopeBorder'         .s:fg_fg_idle  .s:bg_none    .s:fmt_none
+exe 'hi! TelescopePreviewLine'    .s:fg_none     .s:bg_border  .s:fmt_none
+exe 'hi! TelescopeMultiSelection' .s:fg_field    .s:bg_shadow  .s:fmt_bold
+exe 'hi! TelescopeMatching'       .s:fg_operator .s:bg_none    .s:fmt_bold
 
 " WhichKey
 hi! link WhichKeyValue Directory
 
 " Rnvimr
-exe 'hi! RnvimrNormal'          .s:fg_fg         .s:bg_none     .s:fmt_none
+exe 'hi! RnvimrNormal'          .s:fg_fg       .s:bg_none      .s:fmt_none
 
 " Barbar
 exe 'hi! BufferCurrent'         .s:fg_fg       .s:bg_selection .s:fmt_none
