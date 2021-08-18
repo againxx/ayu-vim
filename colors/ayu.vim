@@ -262,10 +262,11 @@ hi! link TSNamespace Namespace
 hi! link TSField Field
 
 " Coc
-exe 'hi! CocErrorSign'      .s:fg_removed    .s:bg_none        .s:fmt_bold
-exe 'hi! CocWarningSign'    .s:fg_function   .s:bg_none        .s:fmt_none
-exe 'hi! CocInfoSign'       .s:fg_regexp     .s:bg_none        .s:fmt_none
-exe 'hi! CocHighlightText'  .s:fg_none       .s:bg_guide       .s:fmt_none
+exe 'hi! CocErrorSign'       .s:fg_removed   .s:bg_none        .s:fmt_bold
+exe 'hi! CocWarningSign'     .s:fg_function  .s:bg_none        .s:fmt_none
+exe 'hi! CocInfoSign'        .s:fg_regexp    .s:bg_none        .s:fmt_none
+exe 'hi! CocHighlightText'   .s:fg_none      .s:bg_guide       .s:fmt_none
+exe 'hi! CocUnusedHighlight' .s:fg_fg_idle   .s:bg_none        .s:fmt_none
 
 " Indent
 exe 'hi! IndentBlanklineChar' .s:fg_border   .s:bg_none        .s:fmt_none
