@@ -109,9 +109,10 @@ exe 'hi! CursorLine'    .s:fg_none        .s:bg_line        .s:fmt_none
 exe 'hi! LineNr'        .s:fg_virtual     .s:bg_none        .s:fmt_none
 
 exe 'hi! Directory'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe 'hi! DiffAdd'       .s:fg_added       .s:bg_panel       .s:fmt_none
+exe 'hi! DiffAdd'       .s:fg_added       .s:bg_panel       .s:fmt_bold
 exe 'hi! DiffChange'    .s:fg_modified    .s:bg_panel       .s:fmt_none
-exe 'hi! DiffText'      .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe 'hi! DiffText'      .s:fg_special     .s:bg_panel       .s:fmt_bold
+exe 'hi! DiffDelete'    .s:fg_line        .s:bg_removed     .s:fmt_none
 exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe 'hi! VertSplit'     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
