@@ -27,6 +27,8 @@ let s:palette.field     = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#
 let s:palette.regexp    = {'dark': '#95E6CB',  'light': '#4CBF99',  'mirage': '#95E6CB'}
 let s:palette.string    = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#BAE67E'}
 let s:palette.namespace = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#9ac732'}
+let s:palette.label     = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#399EE6'}
+let s:palette.shortcut  = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#86B300'}
 let s:palette.function  = {'dark': '#FFB454',  'light': '#F29718',  'mirage': '#FFD580'}
 let s:palette.special   = {'dark': '#E6B673',  'light': '#E6B673',  'mirage': '#FFE6B3'}
 let s:palette.keyword   = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#FFA759'}
@@ -38,6 +40,7 @@ let s:palette.guide     = {'dark': '#2D3640',  'light': '#D9D8D7',  'mirage': '#
 let s:palette.line      = {'dark': '#151A1E',  'light': '#F3F3F3',  'mirage': '#191E2A'}
 let s:palette.selection = {'dark': '#253340',  'light': '#F0EEE4',  'mirage': '#33415E'}
 let s:palette.fg        = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#CBCCC6'}
+let s:palette.fg_bright = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#FAFAFA'}
 let s:palette.fg_idle   = {'dark': '#4D5566',  'light': '#8A9199',  'mirage': '#707A8C'}
 let s:palette.added     = {'dark': '#91B362',  'light': '#99BF4D',  'mirage': '#A6CC70'}
 let s:palette.modified  = {'dark': '#6994BF',  'light': '#709ECC',  'mirage': '#77A8D9'}
@@ -88,6 +91,7 @@ exe "let s:fmt_ital = ' gui=NONE".s:i.      ' cterm=NONE'.s:i.      ' term=NONE'
 exe "let s:fmt_stnd = ' gui=NONE".s:s.      ' cterm=NONE'.s:s.      ' term=NONE'.s:s    ."'"
 exe "let s:fmt_revr = ' gui=NONE".s:r.      ' cterm=NONE'.s:r.      ' term=NONE'.s:r    ."'"
 exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  ' cterm=NONE'.s:r.s:b.  ' term=NONE'.s:r.s:b."'"
+exe "let s:fmt_unbi = ' gui=NONE".s:u.s:b.s:i. ' cterm=NONE'.s:u.s:b.s:i ' term=NONE'.s:u.s:b.s:i."'"
 "}}}
 
 
@@ -119,7 +123,7 @@ exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
 exe 'hi! FoldColumn'    .s:fg_none        .s:bg_panel       .s:fmt_none
 "   Incsearch"
 
-exe 'hi! MatchParen'    .s:fg_fg          .s:bg_bg          .s:fmt_undr
+exe 'hi! MatchParen'    .s:fg_regexp      .s:bg_bg          .s:fmt_undr
 exe 'hi! ModeMsg'       .s:fg_string      .s:bg_none        .s:fmt_none
 exe 'hi! MoreMsg'       .s:fg_string      .s:bg_none        .s:fmt_none
 exe 'hi! NonText'       .s:fg_guide       .s:bg_none        .s:fmt_none
@@ -347,6 +351,17 @@ exe 'hi! DapUIBreakpointsPath' .s:fg_regexp    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIBreakpointsInfo' .s:fg_string    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIBreakpointsCurrentLine' .s:fg_namespace .s:bg_none .s:fmt_bold
 hi! link DapUIBreakpointsLine DapUILineNumber
+
+" Lightspeed
+exe 'hi! LightspeedCursor'                 .s:fg_border    .s:bg_accent .s:fmt_bldi
+exe 'hi! LightspeedLabel'                  .s:fg_label     .s:bg_none   .s:fmt_unbi
+exe 'hi! LightspeedLabelOverlapped'        .s:fg_entity    .s:bg_none   .s:fmt_unbi
+exe 'hi! LightspeedLabelDistant'           .s:fg_string    .s:bg_none   .s:fmt_undb
+exe 'hi! LightspeedLabelDistantOverlapped' .s:fg_added     .s:bg_none   .s:fmt_undb
+exe 'hi! LightspeedShortcut'               .s:fg_fg_bright .s:bg_label  .s:fmt_unbi
+exe 'hi! LightspeedGreyWash'               .s:fg_comment   .s:bg_none   .s:fmt_none
+exe 'hi! LightspeedUnlabeledMatch'         .s:fg_regexp    .s:bg_none   .s:fmt_bold
+exe 'hi! LightspeedOneCharMatch'           .s:fg_border    .s:bg_tag    .s:fmt_bold
 
 " Dap-virtual-text
 exe 'hi! NvimDapVirtualText'  .s:fg_virtual    .s:bg_none      .s:fmt_none
