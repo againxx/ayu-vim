@@ -129,6 +129,8 @@ exe 'hi! MoreMsg'       .s:fg_string      .s:bg_none        .s:fmt_none
 exe 'hi! NonText'       .s:fg_guide       .s:bg_none        .s:fmt_none
 exe 'hi! Pmenu'         .s:fg_fg          .s:bg_selection   .s:fmt_none
 exe 'hi! PmenuSel'      .s:fg_fg          .s:bg_selection   .s:fmt_revr
+exe 'hi! NormalFloat'   .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe 'hi! FloatBorder'   .s:fg_virtual     .s:bg_panel       .s:fmt_none
 "   PmenuSbar"
 "   PmenuThumb"
 exe "hi! Question"      .s:fg_string      .s:bg_none        .s:fmt_none
@@ -260,6 +262,18 @@ exe "hi! GitGutterChange"       .s:fg_modified   .s:bg_none        .s:fmt_none
 exe "hi! GitGutterDelete"       .s:fg_removed    .s:bg_none        .s:fmt_none
 exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
 
+" Gitsigns
+hi! link GitSignsAdd GitGutterAdd
+hi! link GitSignsChange GitGutterChange
+hi! link GitSignsDelete GitGutterDelete
+hi! link GitSignsChangeDelete GitGutterChangeDelete
+exe "hi! GitSignsAddInline"     .s:fg_border     .s:bg_added      .s:fmt_none
+exe "hi! GitSignsChangeInline"  .s:fg_border     .s:bg_modified   .s:fmt_none
+exe "hi! GitSignsDeleteInline"  .s:fg_border     .s:bg_removed    .s:fmt_none
+hi! link GitSignsAddLnInline GitGutterAdd
+hi! link GitSignsChangeLnInline GitGutterChange
+hi! link GitSignsDeleteLnInline GitGutterDelete
+
 " Treesitter
 hi! link TSParameter Parameter
 hi! link TSConstructor Constructor
@@ -272,6 +286,19 @@ exe 'hi! CocWarningSign'     .s:fg_function  .s:bg_none        .s:fmt_none
 exe 'hi! CocInfoSign'        .s:fg_regexp    .s:bg_none        .s:fmt_none
 exe 'hi! CocHighlightText'   .s:fg_none      .s:bg_guide       .s:fmt_none
 exe 'hi! CocUnusedHighlight' .s:fg_fg_idle   .s:bg_none        .s:fmt_none
+
+" nvim-lsp
+hi! link DiagnosticError CocErrorSign
+hi! link DiagnosticWarn CocWarningSign
+hi! link DiagnosticInfo CocInfoSign
+exe 'hi! DiagnosticHint'              .s:fg_entity    .s:bg_none   .s:fmt_none
+exe 'hi! LspReferenceText'            .s:fg_none      .s:bg_guide  .s:fmt_none
+exe 'hi! LspReferenceRead'            .s:fg_none      .s:bg_guide  .s:fmt_none
+exe 'hi! LspReferenceWrite'           .s:fg_none      .s:bg_guide  .s:fmt_none
+exe 'hi! LspSignatureActiveParameter' .s:fg_namespace .s:bg_none   .s:fmt_bold
+
+" symbols-outline
+exe 'hi! FocusedSymbol'       .s:fg_bg       .s:bg_regexp      .s:fmt_bold
 
 " Indent
 exe 'hi! IndentBlanklineChar' .s:fg_border   .s:bg_none        .s:fmt_none
@@ -352,6 +379,16 @@ exe 'hi! DapUIBreakpointsInfo' .s:fg_string    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIBreakpointsCurrentLine' .s:fg_namespace .s:bg_none .s:fmt_bold
 hi! link DapUIBreakpointsLine DapUILineNumber
 
+" lspsaga
+exe 'hi! LspSagaCodeActionContent' .s:fg_string    .s:bg_none   .s:fmt_bold
+exe 'hi! LspSagaHoverBorder'       .s:fg_virtual   .s:bg_none   .s:fmt_bold
+hi! link LspSagaCodeActionBorder DapUIFloatBorder
+hi! link LspSagaRenamePromptPrefix DapUIWatchesValue
+hi! link LspSagaRenameBorder DapUIFloatBorder
+hi! link LspSagaDefPreviewBorder LspSagaHoverBorder
+hi! link LspSagaCodeActionTitle Title
+
+
 " Lightspeed
 exe 'hi! LightspeedCursor'                 .s:fg_border    .s:bg_accent .s:fmt_bldi
 exe 'hi! LightspeedLabel'                  .s:fg_label     .s:bg_none   .s:fmt_unbi
@@ -365,6 +402,28 @@ exe 'hi! LightspeedOneCharMatch'           .s:fg_border    .s:bg_tag    .s:fmt_b
 
 " Dap-virtual-text
 exe 'hi! NvimDapVirtualText'  .s:fg_virtual    .s:bg_none      .s:fmt_none
+
+" nvim-cmp
+hi! default link CmpItemAbbrMatch TelescopeMatching
+hi! default link CmpItemAbbrMatchFuzzy TelescopeMatching
+hi! default link CmpItemKindFunction Function
+hi! default link CmpItemKindMethod Function
+hi! default link CmpItemKindClass Namespace
+hi! default link CmpItemKindStruct Structure
+hi! default link CmpItemKindField Field
+hi! default link CmpItemKindProperty Field
+hi! default link CmpItemKindVariable Identifier
+hi! default link CmpItemKindSnippet Special
+hi! default link CmpItemKindFile Special
+hi! default link CmpItemKindFolder Special
+hi! default link CmpItemKindText String
+hi! default link CmpItemKindValue Constant
+hi! default link CmpItemKindConstant Constant
+hi! default link CmpItemKindEnum Todo
+hi! default link CmpItemKindInterface Todo
+hi! default link CmpItemKindConstructor Constructor
+hi! default link CmpItemKindModule PreProc
+exe 'hi! CmpDocNormal' .s:fg_fg       .s:bg_shadow  .s:fmt_none
 "}}}
 
 " Diff Syntax Highlighting:"{{{
