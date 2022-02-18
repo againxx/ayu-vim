@@ -15,39 +15,43 @@ let g:colors_name = 'ayu'
 
 let s:palette = {}
 
-let s:palette.bg        = {'dark': '#0A0E14',  'light': '#FAFAFA',  'mirage': '#1F2430'}
+let s:palette.bg          = {'dark': '#0A0E14',  'light': '#FAFAFA',  'mirage': '#1F2430'}
 
-let s:palette.comment   = {'dark': '#5C6773',  'light': '#ABB0B6',  'mirage': '#5C6773'}
-let s:palette.markup    = {'dark': '#F07178',  'light': '#F07171',  'mirage': '#F28779'}
-let s:palette.constant  = {'dark': '#FFEE99',  'light': '#A37ACC',  'mirage': '#D4BFFF'}
-let s:palette.operator  = {'dark': '#F29668',  'light': '#ED9366',  'mirage': '#F29E74'}
-let s:palette.entity    = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#73D0FF'}
-let s:palette.tag       = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#5CCFE6'}
-let s:palette.field     = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#B695E0'}
-let s:palette.regexp    = {'dark': '#95E6CB',  'light': '#4CBF99',  'mirage': '#95E6CB'}
-let s:palette.string    = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#BAE67E'}
-let s:palette.namespace = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#9ac732'}
-let s:palette.label     = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#399EE6'}
-let s:palette.shortcut  = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#86B300'}
-let s:palette.function  = {'dark': '#FFB454',  'light': '#F29718',  'mirage': '#FFD580'}
-let s:palette.special   = {'dark': '#E6B673',  'light': '#E6B673',  'mirage': '#FFE6B3'}
-let s:palette.keyword   = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#FFA759'}
+let s:palette.comment     = {'dark': '#5C6773',  'light': '#ABB0B6',  'mirage': '#5C6773'}
+let s:palette.markup      = {'dark': '#F07178',  'light': '#F07171',  'mirage': '#F28779'}
+let s:palette.constant    = {'dark': '#FFEE99',  'light': '#A37ACC',  'mirage': '#D4BFFF'}
+let s:palette.operator    = {'dark': '#F29668',  'light': '#ED9366',  'mirage': '#F29E74'}
+let s:palette.entity      = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#73D0FF'}
+let s:palette.tag         = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#5CCFE6'}
+let s:palette.field       = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#B695E0'}
+let s:palette.regexp      = {'dark': '#95E6CB',  'light': '#4CBF99',  'mirage': '#95E6CB'}
+let s:palette.string      = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#BAE67E'}
+let s:palette.namespace   = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#9ac732'}
+let s:palette.label       = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#399EE6'}
+let s:palette.shortcut    = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#86B300'}
+let s:palette.function    = {'dark': '#FFB454',  'light': '#F29718',  'mirage': '#FFD580'}
+let s:palette.special     = {'dark': '#E6B673',  'light': '#E6B673',  'mirage': '#FFE6B3'}
+let s:palette.keyword     = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#FFA759'}
 
-let s:palette.error     = {'dark': '#FF3333',  'light': '#F51818',  'mirage': '#FF3333'}
-let s:palette.accent    = {'dark': '#E6B450',  'light': '#FF9940',  'mirage': '#FFCC66'}
-let s:palette.panel     = {'dark': '#14191F',  'light': '#FFFFFF',  'mirage': '#232834'}
-let s:palette.guide     = {'dark': '#2D3640',  'light': '#D9D8D7',  'mirage': '#323A4C'}
-let s:palette.line      = {'dark': '#151A1E',  'light': '#F3F3F3',  'mirage': '#191E2A'}
-let s:palette.selection = {'dark': '#253340',  'light': '#F0EEE4',  'mirage': '#33415E'}
-let s:palette.fg        = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#CBCCC6'}
-let s:palette.fg_bright = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#FAFAFA'}
-let s:palette.fg_idle   = {'dark': '#4D5566',  'light': '#8A9199',  'mirage': '#707A8C'}
-let s:palette.added     = {'dark': '#91B362',  'light': '#99BF4D',  'mirage': '#A6CC70'}
-let s:palette.modified  = {'dark': '#6994BF',  'light': '#709ECC',  'mirage': '#77A8D9'}
-let s:palette.removed   = {'dark': '#D96C75',  'light': '#F27983',  'mirage': '#F27983'}
-let s:palette.border    = {'dark': '#F0F0F0',  'light': '#000000',  'mirage': '#101521'}
-let s:palette.shadow    = {'dark': '#00010A',  'light': '#424A50',  'mirage': '#141925'}
-let s:palette.virtual   = {'dark': '#00010A',  'light': '#424A50',  'mirage': '#42547a'}
+let s:palette.error       = {'dark': '#FF3333',  'light': '#F51818',  'mirage': '#FF3333'}
+let s:palette.accent      = {'dark': '#E6B450',  'light': '#FF9940',  'mirage': '#FFCC66'}
+let s:palette.panel       = {'dark': '#14191F',  'light': '#FFFFFF',  'mirage': '#232834'}
+let s:palette.guide       = {'dark': '#2D3640',  'light': '#D9D8D7',  'mirage': '#323A4C'}
+let s:palette.line        = {'dark': '#151A1E',  'light': '#F3F3F3',  'mirage': '#191E2A'}
+let s:palette.selection   = {'dark': '#253340',  'light': '#F0EEE4',  'mirage': '#33415E'}
+let s:palette.fg          = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#CBCCC6'}
+let s:palette.fg_bright   = {'dark': '#E6E1CF',  'light': '#5C6773',  'mirage': '#FAFAFA'}
+let s:palette.fg_idle     = {'dark': '#4D5566',  'light': '#8A9199',  'mirage': '#707A8C'}
+let s:palette.added       = {'dark': '#91B362',  'light': '#99BF4D',  'mirage': '#A6CC70'}
+let s:palette.modified    = {'dark': '#6994BF',  'light': '#709ECC',  'mirage': '#77A8D9'}
+let s:palette.removed     = {'dark': '#D96C75',  'light': '#F27983',  'mirage': '#F27983'}
+let s:palette.diff_add    = {'dark': '#91B362',  'light': '#99BF4D',  'mirage': '#3a453c'}
+let s:palette.diff_change = {'dark': '#6994BF',  'light': '#709ECC',  'mirage': '#303952'}
+let s:palette.diff_delete = {'dark': '#D96C75',  'light': '#F27983',  'mirage': '#473141'}
+let s:palette.diff_text   = {'dark': '#6994BF',  'light': '#709ECC',  'mirage': '#4c6482'}
+let s:palette.border      = {'dark': '#F0F0F0',  'light': '#000000',  'mirage': '#101521'}
+let s:palette.shadow      = {'dark': '#00010A',  'light': '#424A50',  'mirage': '#141925'}
+let s:palette.virtual     = {'dark': '#00010A',  'light': '#424A50',  'mirage': '#42547a'}
 
 "}}}
 
@@ -113,10 +117,10 @@ exe 'hi! CursorLine'    .s:fg_none        .s:bg_line        .s:fmt_none
 exe 'hi! LineNr'        .s:fg_virtual     .s:bg_none        .s:fmt_none
 
 exe 'hi! Directory'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe 'hi! DiffAdd'       .s:fg_added       .s:bg_panel       .s:fmt_bold
-exe 'hi! DiffChange'    .s:fg_modified    .s:bg_panel       .s:fmt_none
-exe 'hi! DiffText'      .s:fg_special     .s:bg_panel       .s:fmt_bold
-exe 'hi! DiffDelete'    .s:fg_line        .s:bg_removed     .s:fmt_none
+exe 'hi! DiffAdd'       .s:fg_none        .s:bg_diff_add    .s:fmt_none
+exe 'hi! DiffChange'    .s:fg_none        .s:bg_diff_change .s:fmt_none
+exe 'hi! DiffText'      .s:fg_none        .s:bg_diff_text   .s:fmt_bold
+exe 'hi! DiffDelete'    .s:fg_none        .s:bg_diff_delete .s:fmt_none
 exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe 'hi! VertSplit'     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
@@ -280,6 +284,11 @@ hi! link TSConstructor Constructor
 hi! link TSNamespace Namespace
 hi! link TSField Field
 
+" Neogit
+hi! link NeogitNotificationInfo GitGutterAdd
+hi! link NeogitNotificationWarning Function
+hi! link NeogitNotificationError GitSignsDelete
+
 " Coc
 exe 'hi! CocErrorSign'       .s:fg_removed   .s:bg_none        .s:fmt_bold
 exe 'hi! CocWarningSign'     .s:fg_function  .s:bg_none        .s:fmt_none
@@ -420,7 +429,8 @@ hi! default link CmpItemKindText String
 hi! default link CmpItemKindValue Constant
 hi! default link CmpItemKindConstant Constant
 hi! default link CmpItemKindEnum Todo
-hi! default link CmpItemKindInterface Todo
+hi! default link CmpItemKindEnumMember Todo
+hi! default link CmpItemKindInterface Type
 hi! default link CmpItemKindConstructor Constructor
 hi! default link CmpItemKindModule PreProc
 exe 'hi! CmpDocNormal' .s:fg_fg       .s:bg_shadow  .s:fmt_none
