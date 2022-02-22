@@ -433,6 +433,7 @@ hi! default link CmpItemKindEnumMember Todo
 hi! default link CmpItemKindInterface Type
 hi! default link CmpItemKindConstructor Constructor
 hi! default link CmpItemKindModule PreProc
+hi! default link CmpItemMenu Comment
 exe 'hi! CmpDocNormal' .s:fg_fg       .s:bg_shadow  .s:fmt_none
 "}}}
 
