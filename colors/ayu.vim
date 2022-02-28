@@ -120,7 +120,7 @@ exe 'hi! Directory'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe 'hi! DiffAdd'       .s:fg_none        .s:bg_diff_add    .s:fmt_none
 exe 'hi! DiffChange'    .s:fg_none        .s:bg_diff_change .s:fmt_none
 exe 'hi! DiffText'      .s:fg_none        .s:bg_diff_text   .s:fmt_bold
-exe 'hi! DiffDelete'    .s:fg_none        .s:bg_diff_delete .s:fmt_none
+exe 'hi! DiffDelete'    .s:fg_shadow      .s:bg_diff_delete .s:fmt_none
 exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe 'hi! VertSplit'     .s:fg_bg          .s:bg_none        .s:fmt_none
 exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
@@ -341,6 +341,28 @@ hi! link VimwikiHeader4 htmlH4
 hi! link VimwikiHeader5 htmlH5
 hi! link VimwikiHeader6 htmlH6
 
+" Neorg
+hi! link NeorgHeading1Prefix htmlH1
+hi! link NeorgHeading2Prefix htmlH2
+hi! link NeorgHeading3Prefix htmlH3
+hi! link NeorgHeading4Prefix htmlH4
+hi! link NeorgHeading5Prefix htmlH5
+hi! link NeorgHeading6Prefix htmlH6
+hi! link NeorgHeading1Title htmlH1
+hi! link NeorgHeading2Title htmlH2
+hi! link NeorgHeading3Title htmlH3
+hi! link NeorgHeading4Title htmlH4
+hi! link NeorgHeading5Title htmlH5
+hi! link NeorgHeading6Title htmlH6
+hi! link NeorgUnorderedList1 Type
+hi! link NeorgUnorderedList2 Type
+hi! link NeorgUnorderedList3 Type
+hi! link NeorgUnorderedList4 Type
+hi! link NeorgUnorderedList5 Type
+hi! link NeorgUnorderedList6 Type
+exe 'hi! NeorgMarkupVerbatim'     .s:fg_modified  .s:bg_none  .s:fmt_none
+
+
 " Telescope
 exe 'hi! TelescopeBorder'         .s:fg_fg_idle  .s:bg_none    .s:fmt_none
 exe 'hi! TelescopePreviewLine'    .s:fg_none     .s:bg_border  .s:fmt_none
@@ -399,15 +421,15 @@ hi! link LspSagaCodeActionTitle Title
 
 
 " Lightspeed
-exe 'hi! LightspeedCursor'                 .s:fg_border    .s:bg_accent .s:fmt_bldi
-exe 'hi! LightspeedLabel'                  .s:fg_label     .s:bg_none   .s:fmt_unbi
-exe 'hi! LightspeedLabelOverlapped'        .s:fg_entity    .s:bg_none   .s:fmt_unbi
-exe 'hi! LightspeedLabelDistant'           .s:fg_string    .s:bg_none   .s:fmt_undb
-exe 'hi! LightspeedLabelDistantOverlapped' .s:fg_added     .s:bg_none   .s:fmt_undb
-exe 'hi! LightspeedShortcut'               .s:fg_fg_bright .s:bg_label  .s:fmt_unbi
-exe 'hi! LightspeedGreyWash'               .s:fg_comment   .s:bg_none   .s:fmt_none
-exe 'hi! LightspeedUnlabeledMatch'         .s:fg_regexp    .s:bg_none   .s:fmt_bold
-exe 'hi! LightspeedOneCharMatch'           .s:fg_border    .s:bg_tag    .s:fmt_bold
+exe 'hi! LightspeedCursor'                  .s:fg_border     .s:bg_accent    .s:fmt_bldi
+exe 'hi! LightspeedLabel'                   .s:fg_label      .s:bg_none      .s:fmt_unbi
+exe 'hi! LightspeedLabelOverlapped'         .s:fg_entity     .s:bg_none      .s:fmt_unbi
+exe 'hi! LightspeedLabelDistant'            .s:fg_string     .s:bg_none      .s:fmt_undb
+exe 'hi! LightspeedLabelDistantOverlapped'  .s:fg_added      .s:bg_none      .s:fmt_undb
+exe 'hi! LightspeedShortcut'                .s:fg_fg_bright  .s:bg_label     .s:fmt_unbi
+exe 'hi! LightspeedGreyWash'                .s:fg_comment    .s:bg_none      .s:fmt_none
+exe 'hi! LightspeedUnlabeledMatch'          .s:fg_regexp     .s:bg_none      .s:fmt_bold
+exe 'hi! LightspeedOneCharMatch'            .s:fg_border     .s:bg_modified  .s:fmt_bold
 
 " Dap-virtual-text
 exe 'hi! NvimDapVirtualText'  .s:fg_virtual    .s:bg_none      .s:fmt_none
