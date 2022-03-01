@@ -301,9 +301,9 @@ hi! link DiagnosticError CocErrorSign
 hi! link DiagnosticWarn CocWarningSign
 hi! link DiagnosticInfo CocInfoSign
 exe 'hi! DiagnosticHint'              .s:fg_entity    .s:bg_none   .s:fmt_none
-exe 'hi! LspReferenceText'            .s:fg_none      .s:bg_guide  .s:fmt_none
-exe 'hi! LspReferenceRead'            .s:fg_none      .s:bg_guide  .s:fmt_none
-exe 'hi! LspReferenceWrite'           .s:fg_none      .s:bg_guide  .s:fmt_none
+exe 'hi! LspReferenceText'            .s:fg_none      .s:bg_border .s:fmt_none
+exe 'hi! LspReferenceRead'            .s:fg_none      .s:bg_border .s:fmt_none
+exe 'hi! LspReferenceWrite'           .s:fg_none      .s:bg_border .s:fmt_none
 exe 'hi! LspSignatureActiveParameter' .s:fg_namespace .s:bg_none   .s:fmt_bold
 
 " symbols-outline
@@ -457,6 +457,9 @@ hi! default link CmpItemKindConstructor Constructor
 hi! default link CmpItemKindModule PreProc
 hi! default link CmpItemMenu LightspeedGreyWash
 exe 'hi! CmpDocNormal' .s:fg_fg       .s:bg_shadow  .s:fmt_none
+
+" nvim-bqf
+hi! link BqfPreviewBorder GitGutterChange
 "}}}
 
 " Diff Syntax Highlighting:"{{{
