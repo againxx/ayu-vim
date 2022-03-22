@@ -122,7 +122,7 @@ exe 'hi! DiffChange'    .s:fg_none        .s:bg_diff_change .s:fmt_none
 exe 'hi! DiffText'      .s:fg_none        .s:bg_diff_text   .s:fmt_bold
 exe 'hi! DiffDelete'    .s:fg_shadow      .s:bg_diff_delete .s:fmt_none
 exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
-exe 'hi! VertSplit'     .s:fg_bg          .s:bg_none        .s:fmt_none
+exe 'hi! VertSplit'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
 exe 'hi! FoldColumn'    .s:fg_none        .s:bg_panel       .s:fmt_none
 "   Incsearch"
