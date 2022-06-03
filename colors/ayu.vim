@@ -429,7 +429,7 @@ exe 'hi! LightspeedLabelDistantOverlapped'  .s:fg_added      .s:bg_none      .s:
 exe 'hi! LightspeedShortcut'                .s:fg_fg_bright  .s:bg_label     .s:fmt_unbi
 exe 'hi! LightspeedGreyWash'                .s:fg_comment    .s:bg_none      .s:fmt_none
 exe 'hi! LightspeedUnlabeledMatch'          .s:fg_regexp     .s:bg_none      .s:fmt_bold
-exe 'hi! LightspeedOneCharMatch'            .s:fg_border     .s:bg_modified  .s:fmt_bold
+exe 'hi! LightspeedOneCharMatch'            .s:fg_fg         .s:bg_diff_text .s:fmt_bold
 
 " Dap-virtual-text
 exe 'hi! NvimDapVirtualText'  .s:fg_virtual    .s:bg_none      .s:fmt_none
@@ -461,6 +461,17 @@ exe 'hi! CmpDocNormal' .s:fg_fg       .s:bg_shadow  .s:fmt_none
 " nvim-bqf
 hi! link BqfPreviewBorder GitGutterChange
 "}}}
+
+" fidget.nvim
+exe 'hi! FidgetTask'            .s:fg_fg_idle     .s:bg_none  .s:fmt_none
+
+" renamer.nvim
+hi! default link RenamerBorder TelescopeBorder
+exe 'hi! RenamerTitle'          .s:fg_namespace   .s:bg_none  .s:fmt_bldi
+
+" marks.nvim
+exe 'hi! MarkSignHL'            .s:fg_field       .s:bg_none  .s:fmt_bold
+exe 'hi! MarkSignNumHL'         .s:fg_modified    .s:bg_none  .s:fmt_none
 
 " Diff Syntax Highlighting:"{{{
 " ----------------------------------------------------------------------------
