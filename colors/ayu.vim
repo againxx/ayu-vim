@@ -123,9 +123,9 @@ exe 'hi! DiffText'      .s:fg_none        .s:bg_diff_text   .s:fmt_bold
 exe 'hi! DiffDelete'    .s:fg_shadow      .s:bg_diff_delete .s:fmt_none
 exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe 'hi! VertSplit'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe 'hi! FoldColumn'    .s:fg_none        .s:bg_panel       .s:fmt_none
-"   Incsearch"
+exe 'hi! IncSearch'     .s:fg_border      .s:bg_special     .s:fmt_none
 
 exe 'hi! MatchParen'    .s:fg_regexp      .s:bg_bg          .s:fmt_undr
 exe 'hi! ModeMsg'       .s:fg_string      .s:bg_none        .s:fmt_none
@@ -472,6 +472,19 @@ exe 'hi! RenamerTitle'          .s:fg_namespace   .s:bg_none  .s:fmt_bldi
 " marks.nvim
 exe 'hi! MarkSignHL'            .s:fg_field       .s:bg_none  .s:fmt_bold
 exe 'hi! MarkSignNumHL'         .s:fg_modified    .s:bg_none  .s:fmt_none
+
+" dashboard.nvim
+exe 'hi! DashboardHeader'       .s:fg_field       .s:bg_none  .s:fmt_none
+exe 'hi! DashboardCenter'       .s:fg_string      .s:bg_none  .s:fmt_none
+exe 'hi! DashboardCenterIcon'   .s:fg_entity      .s:bg_none  .s:fmt_none
+exe 'hi! DashboardShortCut'     .s:fg_markup      .s:bg_none  .s:fmt_bold
+exe 'hi! DashboardFooter'       .s:fg_keyword     .s:bg_none  .s:fmt_bold
+
+" Neo-tree
+exe 'hi! NeoTreeGitUntracked'   .s:fg_function    .s:bg_none  .s:fmt_none
+
+" nvim-hlslens
+exe 'hi! HlSearchLens'          .s:fg_fg  .s:bg_diff_text .s:fmt_none
 
 " Diff Syntax Highlighting:"{{{
 " ----------------------------------------------------------------------------
