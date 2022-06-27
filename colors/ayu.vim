@@ -23,7 +23,7 @@ let s:palette.constant    = {'dark': '#FFEE99',  'light': '#A37ACC',  'mirage': 
 let s:palette.operator    = {'dark': '#F29668',  'light': '#ED9366',  'mirage': '#F29E74'}
 let s:palette.entity      = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#73D0FF'}
 let s:palette.tag         = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#5CCFE6'}
-let s:palette.field       = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#B695E0'}
+let s:palette.field       = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#B695E0'} "#98d9fa
 let s:palette.regexp      = {'dark': '#95E6CB',  'light': '#4CBF99',  'mirage': '#95E6CB'}
 let s:palette.string      = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#BAE67E'}
 let s:palette.namespace   = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#9ac732'}
@@ -32,6 +32,8 @@ let s:palette.shortcut    = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': 
 let s:palette.function    = {'dark': '#FFB454',  'light': '#F29718',  'mirage': '#FFD580'}
 let s:palette.special     = {'dark': '#E6B673',  'light': '#E6B673',  'mirage': '#FFE6B3'}
 let s:palette.keyword     = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#FFA759'}
+let s:palette.srh_bright  = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#FFAEDB'}
+let s:palette.srh_idle    = {'dark': '#FF7733',  'light': '#FF7733',  'mirage': '#574b90'}
 
 let s:palette.error       = {'dark': '#FF3333',  'light': '#F51818',  'mirage': '#FF3333'}
 let s:palette.accent      = {'dark': '#E6B450',  'light': '#FF9940',  'mirage': '#FFCC66'}
@@ -125,7 +127,7 @@ exe 'hi! ErrorMsg'      .s:fg_fg          .s:bg_error       .s:fmt_stnd
 exe 'hi! VertSplit'     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe 'hi! Folded'        .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe 'hi! FoldColumn'    .s:fg_none        .s:bg_panel       .s:fmt_none
-exe 'hi! IncSearch'     .s:fg_border      .s:bg_special     .s:fmt_none
+exe 'hi! IncSearch'     .s:fg_border      .s:bg_srh_bright  .s:fmt_none
 
 exe 'hi! MatchParen'    .s:fg_regexp      .s:bg_bg          .s:fmt_undr
 exe 'hi! ModeMsg'       .s:fg_string      .s:bg_none        .s:fmt_none
@@ -138,7 +140,7 @@ exe 'hi! FloatBorder'   .s:fg_virtual     .s:bg_panel       .s:fmt_none
 "   PmenuSbar"
 "   PmenuThumb"
 exe "hi! Question"      .s:fg_string      .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_bg          .s:bg_constant    .s:fmt_none
+exe "hi! Search"        .s:fg_fg          .s:bg_srh_idle    .s:fmt_none
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_tag         .s:bg_none        .s:fmt_undr
 exe "hi! SpellLocal"    .s:fg_keyword     .s:bg_none        .s:fmt_undr
@@ -398,6 +400,7 @@ exe 'hi! DapUIScope'           .s:fg_regexp    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIType'            .s:fg_field     .s:bg_none      .s:fmt_none
 exe 'hi! DapUIDecoration'      .s:fg_regexp    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIThread'          .s:fg_namespace .s:bg_none      .s:fmt_none
+exe 'hi! DapUIProcess'         .s:fg_markup    .s:bg_none      .s:fmt_none
 exe 'hi! DapUIStoppedThread'   .s:fg_modified  .s:bg_none      .s:fmt_none
 exe 'hi! DapUISource'          .s:fg_field     .s:bg_none      .s:fmt_none
 exe 'hi! DapUILineNumber'      .s:fg_virtual   .s:bg_none      .s:fmt_none
