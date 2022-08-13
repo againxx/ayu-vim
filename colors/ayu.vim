@@ -510,9 +510,3 @@ hi! link diffAdded GitGutterAdd
 "   diffComment
 
 "}}}
-
-" This is needed for some reason: {{{
-
-let &background = s:style
-
-" }}}
