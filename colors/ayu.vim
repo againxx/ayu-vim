@@ -424,15 +424,15 @@ hi! link LspSagaCodeActionTitle Title
 
 
 " Lightspeed
-exe 'hi! LightspeedCursor'                  .s:fg_border     .s:bg_accent    .s:fmt_bldi
-exe 'hi! LightspeedLabel'                   .s:fg_label      .s:bg_none      .s:fmt_unbi
-exe 'hi! LightspeedLabelOverlapped'         .s:fg_entity     .s:bg_none      .s:fmt_unbi
-exe 'hi! LightspeedLabelDistant'            .s:fg_string     .s:bg_none      .s:fmt_undb
-exe 'hi! LightspeedLabelDistantOverlapped'  .s:fg_added      .s:bg_none      .s:fmt_undb
-exe 'hi! LightspeedShortcut'                .s:fg_fg_bright  .s:bg_label     .s:fmt_unbi
-exe 'hi! LightspeedGreyWash'                .s:fg_comment    .s:bg_none      .s:fmt_none
-exe 'hi! LightspeedUnlabeledMatch'          .s:fg_regexp     .s:bg_none      .s:fmt_bold
-exe 'hi! LightspeedOneCharMatch'            .s:fg_fg         .s:bg_diff_text .s:fmt_bold
+exe 'hi! LightspeedCursor'                  .s:fg_border     .s:bg_srh_bright .s:fmt_bldi
+exe 'hi! LightspeedLabel'                   .s:fg_label      .s:bg_none       .s:fmt_unbi
+exe 'hi! LightspeedLabelOverlapped'         .s:fg_entity     .s:bg_none       .s:fmt_unbi
+exe 'hi! LightspeedLabelDistant'            .s:fg_string     .s:bg_none       .s:fmt_undb
+exe 'hi! LightspeedLabelDistantOverlapped'  .s:fg_added      .s:bg_none       .s:fmt_undb
+exe 'hi! LightspeedShortcut'                .s:fg_fg_bright  .s:bg_label      .s:fmt_unbi
+exe 'hi! LightspeedGreyWash'                .s:fg_comment    .s:bg_none       .s:fmt_none
+exe 'hi! LightspeedUnlabeledMatch'          .s:fg_regexp     .s:bg_none       .s:fmt_bold
+exe 'hi! LightspeedOneCharMatch'            .s:fg_fg         .s:bg_diff_text  .s:fmt_bold
 
 " Dap-virtual-text
 exe 'hi! NvimDapVirtualText'  .s:fg_virtual    .s:bg_none      .s:fmt_none
