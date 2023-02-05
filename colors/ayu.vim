@@ -481,9 +481,9 @@ exe 'hi! MarkSignNumHL'         .s:fg_modified    .s:bg_none  .s:fmt_none
 
 " dashboard.nvim
 exe 'hi! DashboardHeader'       .s:fg_field       .s:bg_none  .s:fmt_none
-exe 'hi! DashboardCenter'       .s:fg_string      .s:bg_none  .s:fmt_none
-exe 'hi! DashboardCenterIcon'   .s:fg_entity      .s:bg_none  .s:fmt_none
-exe 'hi! DashboardShortCut'     .s:fg_markup      .s:bg_none  .s:fmt_bold
+exe 'hi! DashboardDesc'         .s:fg_string      .s:bg_none  .s:fmt_none
+exe 'hi! DashboardIcon'         .s:fg_entity      .s:bg_none  .s:fmt_none
+exe 'hi! DashboardKey'          .s:fg_markup      .s:bg_none  .s:fmt_bold
 exe 'hi! DashboardFooter'       .s:fg_keyword     .s:bg_none  .s:fmt_bold
 
 " Neo-tree
