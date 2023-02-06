@@ -24,7 +24,8 @@ let s:palette.operator    = {'dark': '#F29668',  'light': '#ED9366',  'mirage': 
 let s:palette.entity      = {'dark': '#59C2FF',  'light': '#399EE6',  'mirage': '#73D0FF'}
 let s:palette.tag         = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#5CCFE6'}
 let s:palette.field       = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#B695E0'} "#98d9fa
-let s:palette.builtin     = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#98d9fa'}
+let s:palette.qualifier   = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#98d9fa'}
+let s:palette.builtin     = {'dark': '#39BAE6',  'light': '#55B4D4',  'mirage': '#cbd0f4'} "#cecefe
 let s:palette.regexp      = {'dark': '#95E6CB',  'light': '#4CBF99',  'mirage': '#95E6CB'}
 let s:palette.string      = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#BAE67E'}
 let s:palette.namespace   = {'dark': '#C2D94C',  'light': '#86B300',  'mirage': '#9ac732'}
@@ -283,7 +284,7 @@ hi! link GitSignsDeleteLnInline GitGutterDelete
 
 " Treesitter
 exe "hi! @type.builtin"         .s:fg_builtin    .s:bg_none       .s:fmt_ital
-exe "hi! @type.qualifier"       .s:fg_builtin    .s:bg_none       .s:fmt_bldi
+exe "hi! @type.qualifier"       .s:fg_qualifier  .s:bg_none       .s:fmt_bldi
 hi! link @parameter Parameter
 hi! link @constructor Constructor
 hi! link @namespace Namespace
