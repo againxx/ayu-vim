@@ -290,6 +290,10 @@ hi! link @constructor Constructor
 hi! link @namespace Namespace
 hi! link @field Field
 
+" Lsp Semantic Token Highlighting
+hi! link @lsp.type.namespace Namespace
+hi! link @lsp.type.class Type
+
 " Neogit
 hi! link NeogitNotificationInfo GitGutterAdd
 hi! link NeogitNotificationWarning Function
@@ -348,25 +352,20 @@ hi! link VimwikiHeader5 htmlH5
 hi! link VimwikiHeader6 htmlH6
 
 " Neorg
-hi! link NeorgHeading1Prefix htmlH1
-hi! link NeorgHeading2Prefix htmlH2
-hi! link NeorgHeading3Prefix htmlH3
-hi! link NeorgHeading4Prefix htmlH4
-hi! link NeorgHeading5Prefix htmlH5
-hi! link NeorgHeading6Prefix htmlH6
-hi! link NeorgHeading1Title htmlH1
-hi! link NeorgHeading2Title htmlH2
-hi! link NeorgHeading3Title htmlH3
-hi! link NeorgHeading4Title htmlH4
-hi! link NeorgHeading5Title htmlH5
-hi! link NeorgHeading6Title htmlH6
-hi! link NeorgUnorderedList1 Type
-hi! link NeorgUnorderedList2 Type
-hi! link NeorgUnorderedList3 Type
-hi! link NeorgUnorderedList4 Type
-hi! link NeorgUnorderedList5 Type
-hi! link NeorgUnorderedList6 Type
-exe 'hi! NeorgMarkupVerbatim'     .s:fg_modified  .s:bg_none  .s:fmt_none
+hi! link @neorg.headings.1.prefix.norg htmlH1
+hi! link @neorg.headings.2.prefix.norg htmlH2
+hi! link @neorg.headings.3.prefix.norg htmlH3
+hi! link @neorg.headings.4.prefix.norg htmlH4
+hi! link @neorg.headings.5.prefix.norg htmlH5
+hi! link @neorg.headings.6.prefix.norg htmlH6
+hi! link @neorg.headings.1.title.norg htmlH1
+hi! link @neorg.headings.2.title.norg htmlH2
+hi! link @neorg.headings.3.title.norg htmlH3
+hi! link @neorg.headings.4.title.norg htmlH4
+hi! link @neorg.headings.5.title.norg htmlH5
+hi! link @neorg.headings.6.title.norg htmlH6
+hi! link @neorg.lists.unordered.prefix.norg Type
+exe 'hi! @neorg.markup.verbatim'  .s:fg_modified  .s:bg_none  .s:fmt_none
 
 
 " Telescope
