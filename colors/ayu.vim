@@ -289,10 +289,13 @@ hi! link @parameter Parameter
 hi! link @constructor Constructor
 hi! link @namespace Namespace
 hi! link @field Field
+hi! link @property Field
 
 " Lsp Semantic Token Highlighting
 hi! link @lsp.type.namespace Namespace
 hi! link @lsp.type.class Type
+hi! link @lsp.type.property Field
+hi! link @lsp.mod.constructorOrDestructor Constructor
 
 " Neogit
 hi! link NeogitNotificationInfo GitGutterAdd
