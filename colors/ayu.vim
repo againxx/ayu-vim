@@ -290,6 +290,7 @@ hi! link @constructor Constructor
 hi! link @namespace Namespace
 hi! link @field Field
 hi! link @property Field
+hi! link @variable Identifier
 
 " Lsp Semantic Token Highlighting
 hi! link @lsp.type.namespace Namespace
